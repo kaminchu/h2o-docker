@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  h2o:
+    build: .
+    ports:
+       - "8080:8080"
+    volumes:
+       - "./www:/var/www"
+       - "./:/etc/h2o"
+    # restart: always
+    command: h2o --conf /etc/h2o/h2o.conf
